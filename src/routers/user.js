@@ -65,7 +65,7 @@ router.patch('/users/me', auth, async (req, res) => {
 		return allowedUpdates.includes(update)
 	})
 	if (!isValidSetOfUpdates) {
-		returnres.status(400).send('Error: Invalid updates!')
+		return res.status(400).send('Error: Invalid updates!')
 	}
 	try {
 		const user = req.user
